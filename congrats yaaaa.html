@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByAkbarVoldigoad.</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        padding-bottom: 50px;
+        backdrop-filter: blur(5px);
+        color: white;
+        background-attachment: fixed;
+        background-position: center;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+
+      header,
+      nav {
+        padding: 15px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        font-weight: bolder;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: smaller;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: x-large;
+        font-weight: bold;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        height: 30px;
+      }
+
+      img {
+        display: none;
+      }
+
+      button {
+        background-color: red;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Menangani klik pada tautan navigasi
+        $("a.nav-link").on("click", function (e) {
+          e.preventDefault();
+
+          // Mengambil ID target dari atribut href
+          var target = $(this).attr("href");
+
+          // Menganimasikan scroll ke target
+          $("html, body").animate(
+            {
+              scrollTop: $(target).offset().top,
+            },
+            1000
+          ); // Durasi animasi dalam milidetik
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <hr />
+        <marquee><h1>Selamat Yaaaa</h1></marquee>
+        <hr />
+      </header>
+      <nav>
+        <ul>
+          <li><a class="nav-link" href="#aboutMe">Kartu Ucapan</a></li>
+          <li><a class="nav-link" href="#p">Penutup</a></li>
+          <li><a class="nav-link" href="#biodata">Penerima</a></li>
+        </ul>
+      </nav>
+      <section id="aboutMe">
+        <p id="aboutMeText"></p>
+      </section>
+      <section id="p">
+        <p id="pText"></p>
+      </section>
+      <section id="biodata">
+        <p id="biodataText"></p>
+      </section>
+    </div>
+    <center>
+      <button onclick="toggleImage()"><strong>Click For Song</strong></button>
+      <a href="https://youtu.be/WtLXpfPpb-k?feature=shared">
+        <img
+          id="myImage"
+          src="https://www.logo.wine/a/logo/YouTube/YouTube-Icon-Full-Color-Logo.wine.svg"
+          alt="Hati"
+          width="200px"
+        />
+      </a>
+    </center>
+    <br />
+    <footer>
+      <p>&copy; 2023 Web ini Dibuat Dengan ❤️</p>
+    </footer>
+    <script>
+      var aboutMeTextElement = document.getElementById("aboutMeText");
+      var biodataTextElement = document.getElementById("biodataText");
+      var pTextElement = document.getElementById("pText");
+      var aboutMeText =
+        "Selamat ulang tahun, Saskia Aulia Slebew! 🎉 Semoga hari ini penuh dengan kebahagiaan dan keceriaan. Saya ingin mengucapkan selamat kepada Anda untuk mencapai titik ini dalam hidup Anda dan untuk semua pencapaian yang telah Anda raih. Semoga tahun ini membawa Anda lebih banyak keberuntungan, kesehatan yang baik, dan kesuksesan yang lebih besar lagi. Saya sangat bersyukur telah memiliki kesempatan untuk mengenal Anda sebagai teman. Anda adalah seseorang yang istimewa, dan saya berharap Anda terus mengejar semua impian dan tujuan Anda dengan semangat yang tinggi. Ingatlah, hidup ini penuh dengan warna-warni keindahan, dan Anda pantas merasakannya sepenuhnya. Semoga hari ini menjadi awal yang indah untuk tahun yang penuh dengan hal-hal positif. Selamat ulang tahun sekali lagi, Saskia Aulia Slebew! 🎂🥳";
+      ("");
+      var biodataText = "Saskia Aulia Safitri / 19.12.2007";
+      var pText =
+        "Sebagai penutup, aku ingin menyampaikan sepatah kata. Oh iya, sekarang kamu sudah 16 tahun, kan? Dulu, kamu pernah bilang padaku bahwa kamu takut akan tambah dewasa? Tapi nyatanya, sekarang kamu tidak takut lagi, kan? Aku percaya bahwa kamu berani. Jadi, jangan takut lagi ya! Semangat untuk tahun yang akan datang.Aku ingin memanfaatkan kesempatan ini untuk mengucapkan maaf dari lubuk hatiku. Pernahkah aku menyakitimu? Itulah sesuatu yang tidak pernah aku inginkan. Semoga kita bisa melangkah maju dan membangun kenangan indah bersama. Selamat ulang tahun, dan aku berharap kebahagiaan selalu menyertaimu. Semoga setiap langkahmu di masa depan dipenuhi dengan keberhasilan dan kebahagiaan. Tetaplah menjadi pribadi yang berani dan penuh semangat. Terima kasih sudah menjadi bagian dari hidupku. Selamat menikmati perjalanan dewasamu!";
+      var containerText = "Web GreetingCard";
+      var aboutMeIndex = 0;
+      var biodataIndex = 0;
+      var pIndex = 0;
+      var containerIndex = 0;
+
+      function typeEffectAboutMe() {
+        aboutMeTextElement.textContent += aboutMeText[aboutMeIndex];
+        aboutMeIndex++;
+        if (aboutMeIndex >= aboutMeText.length) {
+          clearInterval(aboutMeTypingInterval);
+        }
+      }
+
+      function typeEffectBiodata() {
+        biodataTextElement.textContent += biodataText[biodataIndex];
+        biodataIndex++;
+        if (biodataIndex >= biodataText.length) {
+          clearInterval(biodataTypingInterval);
+        }
+      }
+
+      function typeEffectP() {
+        pTextElement.textContent += pText[pIndex];
+        pIndex++;
+        if (pIndex >= pText.length) {
+          clearInterval(pTypingInterval);
+        }
+      }
+
+      var aboutMeTypingInterval = setInterval(typeEffectAboutMe, 50);
+      var biodataTypingInterval = setInterval(typeEffectBiodata, 50);
+      var pTypingInterval = setInterval(typeEffectP, 50);
+
+      function toggleImage() {
+        var img = document.getElementById("myImage");
+
+        if (img.style.display === "none") {
+          img.style.display = "block";
+        } else {
+          img.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
